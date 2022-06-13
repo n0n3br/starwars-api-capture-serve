@@ -1,6 +1,6 @@
 {
-  "name": "starwars-api-capture-serve",
-  "version": "1.0.0",
+  "name": "@n0n3br/starwars-api-capture-serve",
+  "version": "0.0.2",
   "description": "A library to capture all data from Star Wars API (https://swapi.dev/) and serve it locally.",
   "main": "index.mjs",
   "scripts": {

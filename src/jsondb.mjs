@@ -9,6 +9,7 @@ function getDb(folder, file) {
     fs.mkdirSync(folder);
   }
   const db = new JSONdb(dbPath);
+  db.sync();
   return db;
 }
 export { getDb };

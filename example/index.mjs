@@ -9,6 +9,6 @@ const port = 3000;
 const filePath = path.resolve(".", folder, file);
 
 if (!fs.existsSync(filePath)) {
-  capture(folder, file);
+  await capture(folder, file);
 }
 serve(folder, file, port);

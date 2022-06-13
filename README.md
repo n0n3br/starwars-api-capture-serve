@@ -2,7 +2,7 @@
 
 ## Description
 
-This library capture all data from Star Wars API (https://swapi.dev/) and serve it locally.
+A library to capture all data from Star Wars API (https://swapi.dev/) and serve it locally.
 
 ---
 
@@ -85,7 +85,7 @@ const port = 3000;
 const dbPath = path.resolve(".", dbFolder, dbFile);
 if (!fs.existsSync(dbPath)) {
   // Capture function parameters are optional. If not informed, 'db' and 'swapi.json' values will be used
-  capture(dbFolder, dbFile);
+  await capture(dbFolder, dbFile);
 }
 // serve the resulting data
 // Serve function parameters are optional. If not informed 'db', 'swapi.json' and 3000 values will be used
