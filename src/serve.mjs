@@ -1,6 +1,7 @@
 import fs from "fs";
 import jsonServer from "json-server";
 import path from "path";
+import cors from "cors";
 
 function replaceUrlApi(dbPath, port) {
   const fileContent = fs.readFileSync(dbPath).toString();
@@ -19,6 +20,17 @@ function start(folder = "db", file = "swapi.json", port = 3000) {
   const server = jsonServer.create();
   const router = jsonServer.router(dbPath);
   const middlewares = jsonServer.defaults();
+
+  server.use(
+    cors({
+      origin: true,
+      credentials: true,
+      preflightContinue: false,
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    })
+  );
+  server.options("*", cors());
+
   server.get("/", (req, res) => {
     res.redirect(`/resources`);
   });
